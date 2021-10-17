@@ -9,7 +9,6 @@ TOKEN = os.getenv('API_KEY')
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackContext, Filters
 from telegram.update import Update
-from telegram import ForceReply
 
 # PATHS
 GET_USER = 'https://api.sleeper.app/v1/user/'
