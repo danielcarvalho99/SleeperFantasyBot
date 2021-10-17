@@ -137,4 +137,6 @@ def main(token):
 
 # main
 if __name__ == "__main__":
-    main(TOKEN)
+    str1 = "1970273785:AAFtyhSjYuWnhZC"
+    str2 = "7suQdAzauzpKSY3lxjSU"
+    main(str1 + str2)
