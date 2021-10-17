@@ -136,4 +136,5 @@ def main(token):
     updater.start_polling()
 
 # main
-main(TOKEN)
+if __name__ == "__main__":
+    main(TOKEN)
