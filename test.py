@@ -9,7 +9,11 @@ s3 = S3Connection(os.environ['API_KEY'], os.environ['S3_SECRET'])
 PORT = int(os.environ.get('PORT', 5000))
 
 load_dotenv()
-TOKEN = os.getenv('API_KEY')
+str1_ = "1970273785:AAFtyhSjYuWnhZC"
+str2_ = "7suQdAzauzpKSY3lxjSU"
+
+TOKEN = str1_ + str2_
+
 
 from telegram.ext import Updater, CommandHandler, MessageHandler, CallbackContext, Filters
 from telegram.update import Update
@@ -141,6 +145,7 @@ def main(token):
                           port=int(PORT),
                           url_path=TOKEN)
     updater.bot.setWebhook('https://sleeper-fantasybot.herokuapp.com/' + TOKEN)
+    updater.idle()
 
 # main
 if __name__ == "__main__":
