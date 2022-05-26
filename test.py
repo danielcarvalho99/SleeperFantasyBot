@@ -3,6 +3,10 @@ import telegram
 import logging
 import os
 from dotenv import load_dotenv
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['API_KEY'], os.environ['S3_SECRET'])
+
+PORT = int(os.environ.get('PORT', 5000))
 
 load_dotenv()
 TOKEN = os.getenv('API_KEY')
@@ -133,7 +137,10 @@ def main(token):
     dispatcher.add_handler(CommandHandler('find', find))
     dispatcher.add_handler(MessageHandler(Filters.text & (~Filters.command), search))
 
-    updater.start_polling()
+    updater.start_webhook(listen="0.0.0.0",
+                          port=int(PORT),
+                          url_path=TOKEN)
+    updater.bot.setWebhook('https://one-piece-wiki-bot.herokuapp.com' + TOKEN)
 
 # main
 if __name__ == "__main__":
