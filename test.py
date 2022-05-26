@@ -140,7 +140,7 @@ def main(token):
     updater.start_webhook(listen="0.0.0.0",
                           port=int(PORT),
                           url_path=TOKEN)
-    updater.bot.setWebhook('https://one-piece-wiki-bot.herokuapp.com' + TOKEN)
+    updater.bot.setWebhook('https://sleeper-fantasybot.herokuapp.com/' + TOKEN)
 
 # main
 if __name__ == "__main__":
